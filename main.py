@@ -1,7 +1,11 @@
-import datetime
+from datetime import date, datetime
 import requests
 from bs4 import BeautifulSoup
 
 
-date = input("Please enter a date(YYYY-MM-DD): ")
+year = input("Please enter the year: ")
+month = input("Please enter the month: ")
+day = input("Please enter the day: ")
+
+
 response = requests.get(url="")
