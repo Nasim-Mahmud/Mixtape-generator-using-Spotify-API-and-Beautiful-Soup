@@ -1,7 +1,12 @@
+import os
 import requests
 from bs4 import BeautifulSoup
 from datetime import date
 
+# SPOTIFY_CLIENT_ID = "b1ba601f057a43b794a6ea030b1371a9"
+print(os.environ['SPOTIFY_CLIENT_ID'])
+print(os.environ['SPOTIFY_CLIENT_SECRET'])
+# SPOTIFY_CLIENT_SECRET = "2ada3682273143adb697186f52c61c73"
 
 year = int(input("Please enter the year: "))
 month = int(input("Please enter the month: "))
