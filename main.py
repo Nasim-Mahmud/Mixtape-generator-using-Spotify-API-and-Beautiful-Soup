@@ -10,7 +10,7 @@ from datetime import date
 # dt = date(year, month, day)   # Use datetime in case of hours, minutes and seconds
 # print(dt)
 
-response = requests.get(url=f"https://www.billboard.com/charts/hot-100/{2022-10-1}")
+response = requests.get(url=f"https://www.billboard.com/charts/hot-100/{2021-10-1}")
 
 data = response.text
 soup = BeautifulSoup(data, "html.parser")
