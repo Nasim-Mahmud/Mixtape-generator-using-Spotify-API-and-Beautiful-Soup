@@ -3,7 +3,6 @@ import requests
 from bs4 import BeautifulSoup
 from datetime import date
 
-
 print(os.environ['SPOTIFY_CLIENT_ID'])
 print(os.environ['SPOTIFY_CLIENT_SECRET'])
 
