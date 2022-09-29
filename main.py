@@ -3,9 +3,8 @@ import requests
 from bs4 import BeautifulSoup
 from datetime import date
 
-print(os.environ['SPOTIFY_CLIENT_ID'])
-print(os.environ['SPOTIFY_CLIENT_SECRET'])
-
+SPOTIFY_CLIENT_ID = os.environ['SPOTIFY_CLIENT_ID']
+SPOTIFY_CLIENT_SECRET = os.environ['SPOTIFY_CLIENT_SECRET']
 
 year = int(input("Please enter the year: "))
 month = int(input("Please enter the month: "))
