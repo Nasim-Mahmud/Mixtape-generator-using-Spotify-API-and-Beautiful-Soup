@@ -18,11 +18,12 @@ soup = BeautifulSoup(data, "html.parser")
 musics = []
 top_music = soup.find_all(name="h3", id="title-of-a-story", class_="c-title a-no-trucate a-font-primary-bold-s u-letter-spacing-0021 u-font-size-23@tablet lrv-u-font-size-16 u-line-height-125 u-line-height-normal@mobile-max a-truncate-ellipsis u-max-width-245 u-max-width-230@tablet-only u-letter-spacing-0028@tablet")
 for top in top_music:
-    top_music = top.get_text().replace("\n", "")
-    musics.append(top_music)
+    top_music = top.get_text().replace("\t", "")
+    musics.append(top_music.replace("\n", ""))
 
 music_list = soup.find_all(name="h3", id="title-of-a-story", class_="c-title a-no-trucate a-font-primary-bold-s u-letter-spacing-0021 lrv-u-font-size-18@tablet lrv-u-font-size-16 u-line-height-125 u-line-height-normal@mobile-max a-truncate-ellipsis u-max-width-330 u-max-width-230@tablet-only")
 for names in music_list:
-    music_name = names.get_text().replace("\n", "")
-    musics.append(music_name)
-    # print(music_name.replace("    ", ""))
+    music_name = names.get_text().replace("\t", "")
+    musics.append(music_name.replace("\n", ""))
+
+print(musics)
