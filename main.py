@@ -7,6 +7,7 @@ year = int(input("Please enter the year: "))
 month = int(input("Please enter the month: "))
 day = int(input("Please enter the day: "))
 
-dt = date(year, month, day)
+dt = date(year, month, day)   # Use datetime in case of hours, minutes and seconds
 print(dt)
-# response = requests.get(url="")
+
+response = requests.get(url="")
