@@ -15,5 +15,5 @@ response = requests.get(url=f"https://www.billboard.com/charts/hot-100/{2022-10-
 data = response.text
 soup = BeautifulSoup(data, "html.parser")
 
-music = soup.find_all(name="h3", class_="c-title a-no-trucate")
+music = soup.find_all(name="h3", id="title-of-a-story")
 print(music)
