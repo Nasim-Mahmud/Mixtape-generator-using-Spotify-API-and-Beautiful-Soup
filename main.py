@@ -15,5 +15,7 @@ response = requests.get(url=f"https://www.billboard.com/charts/hot-100/{2022-10-
 data = response.text
 soup = BeautifulSoup(data, "html.parser")
 
-music = soup.find_all(name="h3", id="title-of-a-story")
-print(music)
+music = soup.find_all(name="h3", id="title-of-a-story", class_="c-title a-no-trucate a-font-primary-bold-s u-letter-spacing-0021 lrv-u-font-size-18@tablet lrv-u-font-size-16 u-line-height-125 u-line-height-normal@mobile-max a-truncate-ellipsis u-max-width-330 u-max-width-230@tablet-only")
+for names in music:
+    m = names.get_text().replace("\n", "")
+    print(m.replace("    ", ""))
