@@ -1,5 +1,7 @@
-from bs4 import BeautifulSoup
+import datetime
 import requests
+from bs4 import BeautifulSoup
+
 
 date = input("Please enter a date(YYYY-MM-DD): ")
 response = requests.get(url="")
