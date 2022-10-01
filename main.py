@@ -6,6 +6,7 @@ from bs4 import BeautifulSoup
 # Retrieving spotify credentials from environment variable
 SPOTIFY_CLIENT_ID = os.environ['SPOTIFY_CLIENT_ID']
 SPOTIFY_CLIENT_SECRET = os.environ['SPOTIFY_CLIENT_SECRET']
+SPOTIPY_REDIRECT_URI= 'http://example.com/'
 
 # Retrieving date from user
 year = int(input("Please enter the year: "))
