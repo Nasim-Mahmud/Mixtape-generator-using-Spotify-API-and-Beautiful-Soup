@@ -1,7 +1,9 @@
 import os
+import spotipy
 import requests
 from datetime import date
 from bs4 import BeautifulSoup
+from spotipy.oauth2 import SpotifyOAuth
 
 # Retrieving spotify credentials from environment variable
 SPOTIFY_CLIENT_ID = os.environ['SPOTIFY_CLIENT_ID']
