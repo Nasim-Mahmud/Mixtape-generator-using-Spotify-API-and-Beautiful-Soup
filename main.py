@@ -49,5 +49,3 @@ for names in music_list:
     musics.append(music_name.replace("\n", ""))
 
 print(musics)
-
-
