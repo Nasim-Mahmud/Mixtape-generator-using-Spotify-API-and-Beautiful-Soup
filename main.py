@@ -6,9 +6,9 @@ from bs4 import BeautifulSoup
 from spotipy.oauth2 import SpotifyOAuth
 
 # Retrieving spotify credentials from environment variable
-SPOTIFY_CLIENT_ID = os.environ['SPOTIFY_CLIENT_ID']
-SPOTIFY_CLIENT_SECRET = os.environ['SPOTIFY_CLIENT_SECRET']
-SPOTIPY_REDIRECT_URI = 'http://example.com/'
+SPOTIFY_CLIENT_ID = os.environ["SPOTIFY_CLIENT_ID"]
+SPOTIFY_CLIENT_SECRET = os.environ["SPOTIFY_CLIENT_SECRET"]
+SPOTIPY_REDIRECT_URI = "https://example.com/callback"
 
 sp = spotipy.Spotify(
     auth_manager=SpotifyOAuth(
