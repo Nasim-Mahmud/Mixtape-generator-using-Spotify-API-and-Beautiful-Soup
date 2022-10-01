@@ -13,7 +13,7 @@ SPOTIPY_REDIRECT_URI = "https://example.com/callback"
 sp = spotipy.Spotify(
     auth_manager=SpotifyOAuth(
         scope="playlist-modify-private",
-        redirect_uri="http://example.com",
+        redirect_uri=SPOTIPY_REDIRECT_URI,
         client_id=SPOTIFY_CLIENT_ID,
         client_secret=SPOTIFY_CLIENT_SECRET,
         show_dialog=True,
@@ -21,8 +21,6 @@ sp = spotipy.Spotify(
     )
 )
 user_id = sp.current_user()["id"]
-
-
 
 # Retrieving date from user
 year = int(input("Please enter the year: "))
