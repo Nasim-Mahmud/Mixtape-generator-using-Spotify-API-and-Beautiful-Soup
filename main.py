@@ -38,6 +38,7 @@ for names in music_list:
     musics.append(music_name.replace("\n", ""))
 # print(musics)
 
+# TODO 4: Creating a list of songs URI and authenticating spotify parameters
 sp = spotipy.Spotify(
     auth_manager=SpotifyOAuth(
         scope="playlist-modify-private",
@@ -50,11 +51,10 @@ sp = spotipy.Spotify(
 )
 user_id = sp.current_user()["id"]
 
-# TODO 4: Creating a list of songs URI
 song_uri = []
+pp = pprint.PrettyPrinter(width=41, compact=True)
 for music in musics:
     res = sp.search(q=f"track:{music} year:{year}", type="track")
-    pp = pprint.PrettyPrinter(width=41, compact=True)
     # pp.pprint(res)
     try:
         uri = res["tracks"]["items"][0]["uri"]
@@ -65,5 +65,6 @@ for music in musics:
 
 # TODO 5: Creating playlist and adding songs to the playlist
 playlist = sp.user_playlist_create(user=user_id, name=f"{dt} Billboard Top 100", public=False)
-sp.playlist_add_items(playlist_id=playlist["id"], items=song_uri)
+print(f'Playlist link: {playlist["owner"]["external_urls"]["spotify"]}')
+# sp.playlist_add_items(playlist_id=playlist["id"], items=song_uri)
 print("Success!")
