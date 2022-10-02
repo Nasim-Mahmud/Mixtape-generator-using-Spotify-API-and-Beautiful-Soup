@@ -1,5 +1,4 @@
 import os
-import spotify as spotify
 import spotipy
 import requests
 from datetime import date
