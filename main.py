@@ -50,6 +50,7 @@ for names in music_list:
     musics.append(music_name.replace("\n", ""))
 print(musics)
 
+# Creating a list of songs URI
 song_uri = []
 for music in musics:
     playlist = sp.search(q=f"track:{music} year:{year}", type="track")
