@@ -17,7 +17,7 @@ month = int(input("Please enter the month: "))
 day = int(input("Please enter the day: "))
 
 dt = date(year, month, day)  # Use datetime in case of hours, minutes and seconds
-print(dt)
+print(f"Retrieving data for the date: {dt}, please wait!")
 
 # TODO 3: Scraping data from website
 response = requests.get(url=f"https://www.billboard.com/charts/hot-100/{dt}")
