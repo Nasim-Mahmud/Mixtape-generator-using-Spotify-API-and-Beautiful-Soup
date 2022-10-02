@@ -65,7 +65,7 @@ for music in musics:
     except IndexError:
         print(f"Sorry! Can't find the song: {music}")
 
-
+# Creating playlist and adding songs to the playlist
 playlist = sp.user_playlist_create(user=user_id,name=f"{dt} Billboard Top 100", public=False)
 sp.playlist_add_items(playlist_id=playlist["id"], items=song_uri)
 print("Success!")
