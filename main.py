@@ -1,6 +1,5 @@
 import os
 import pprint
-
 import spotipy
 import requests
 from datetime import date
@@ -58,6 +57,9 @@ for music in musics:
     # pp.pprint(playlist)
     try:
         uri = playlist["tracks"]["items"][0]["uri"]
-        pp.pprint(uri)
+        song_uri.append(uri)
+        # pp.pprint(uri)
     except IndexError:
         print(f"Sorry! Can't find the song: {music}")
+
+print(song_uri)
