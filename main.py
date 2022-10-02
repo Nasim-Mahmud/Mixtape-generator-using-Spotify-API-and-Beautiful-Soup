@@ -6,12 +6,12 @@ from datetime import date
 from bs4 import BeautifulSoup
 from spotipy.oauth2 import SpotifyOAuth
 
-#TODO 1: Retrieving spotify credentials from environment variable
+# TODO 1: Retrieving spotify credentials from environment variable
 SPOTIFY_CLIENT_ID = os.environ["SPOTIFY_CLIENT_ID"]
 SPOTIFY_CLIENT_SECRET = os.environ["SPOTIFY_CLIENT_SECRET"]
 SPOTIPY_REDIRECT_URI = "https://example.com/callback"
 
-#TODO 2: Retrieving date from user
+# TODO 2: Retrieving date from user
 year = int(input("Please enter the year: "))
 month = int(input("Please enter the month: "))
 day = int(input("Please enter the day: "))
@@ -19,7 +19,7 @@ day = int(input("Please enter the day: "))
 dt = date(year, month, day)  # Use datetime in case of hours, minutes and seconds
 print(dt)
 
-#TODO 3: Scraping data from website
+# TODO 3: Scraping data from website
 response = requests.get(url=f"https://www.billboard.com/charts/hot-100/{dt}")
 data = response.text
 soup = BeautifulSoup(data, "html.parser")
@@ -38,7 +38,6 @@ for names in music_list:
     musics.append(music_name.replace("\n", ""))
 print(musics)
 
-
 sp = spotipy.Spotify(
     auth_manager=SpotifyOAuth(
         scope="playlist-modify-private",
@@ -51,7 +50,7 @@ sp = spotipy.Spotify(
 )
 user_id = sp.current_user()["id"]
 
-#TODO 4: Creating a list of songs URI
+# TODO 4: Creating a list of songs URI
 song_uri = []
 for music in musics:
     res = sp.search(q=f"track:{music} year:{year}", type="track")
@@ -64,7 +63,7 @@ for music in musics:
     except IndexError:
         print(f"Sorry! Can't find the song: {music}")
 
-#TODO 5: Creating playlist and adding songs to the playlist
-playlist = sp.user_playlist_create(user=user_id,name=f"{dt} Billboard Top 100", public=False)
+# TODO 5: Creating playlist and adding songs to the playlist
+playlist = sp.user_playlist_create(user=user_id, name=f"{dt} Billboard Top 100", public=False)
 sp.playlist_add_items(playlist_id=playlist["id"], items=song_uri)
 print("Success!")
