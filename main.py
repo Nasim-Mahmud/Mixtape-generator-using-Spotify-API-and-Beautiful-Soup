@@ -11,17 +11,17 @@ SPOTIFY_CLIENT_ID = os.environ["SPOTIFY_CLIENT_ID"]
 SPOTIFY_CLIENT_SECRET = os.environ["SPOTIFY_CLIENT_SECRET"]
 SPOTIPY_REDIRECT_URI = "https://example.com/callback"
 
-# sp = spotipy.Spotify(
-#     auth_manager=SpotifyOAuth(
-#         scope="playlist-modify-private",
-#         redirect_uri=SPOTIPY_REDIRECT_URI,
-#         client_id=SPOTIFY_CLIENT_ID,
-#         client_secret=SPOTIFY_CLIENT_SECRET,
-#         show_dialog=True,
-#         cache_path="token.txt"
-#     )
-# )
-# user_id = sp.current_user()["id"]
+sp = spotipy.Spotify(
+    auth_manager=SpotifyOAuth(
+        scope="playlist-modify-private",
+        redirect_uri=SPOTIPY_REDIRECT_URI,
+        client_id=SPOTIFY_CLIENT_ID,
+        client_secret=SPOTIFY_CLIENT_SECRET,
+        show_dialog=True,
+        cache_path="token.txt"
+    )
+)
+user_id = sp.current_user()["id"]
 
 # Retrieving date from user
 year = int(input("Please enter the year: "))
@@ -52,5 +52,5 @@ for names in music_list:
 print(musics)
 
 for music in musics:
-    playlist = spotify.search(q=f"track:{music} year:{year}", type="track")
+    playlist = sp.search(q=f"track:{music} year:{year}", type="track")
     print(playlist)
