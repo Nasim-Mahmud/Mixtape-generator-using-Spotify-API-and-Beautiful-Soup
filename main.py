@@ -57,7 +57,7 @@ for music in musics:
     pp = pprint.PrettyPrinter(width=41, compact=True)
     # pp.pprint(playlist)
     try:
-        uri = playlist["tracks"]["items"][0]
-        print(uri)
+        uri = playlist["tracks"]["items"][0]["uri"]
+        pp.pprint(uri)
     except IndexError:
         print(f"{music} doesn't exist in Spotify. Skipped.")
