@@ -60,4 +60,4 @@ for music in musics:
         uri = playlist["tracks"]["items"][0]["uri"]
         pp.pprint(uri)
     except IndexError:
-        print(f"{music} doesn't exist in Spotify. Skipped.")
+        print(f"Sorry! Can't find the song: {music}")
