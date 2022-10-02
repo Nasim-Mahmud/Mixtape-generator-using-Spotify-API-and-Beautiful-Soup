@@ -1,4 +1,6 @@
 import os
+import pprint
+
 import spotipy
 import requests
 from datetime import date
@@ -49,6 +51,13 @@ for names in music_list:
     musics.append(music_name.replace("\n", ""))
 print(musics)
 
+song_uri = []
 for music in musics:
     playlist = sp.search(q=f"track:{music} year:{year}", type="track")
-    print(playlist)
+    pp = pprint.PrettyPrinter(width=41, compact=True)
+    # pp.pprint(playlist)
+    try:
+        uri = playlist["tracks"]["items"][0]
+        print(uri)
+    except IndexError:
+        print(f"{music} doesn't exist in Spotify. Skipped.")
