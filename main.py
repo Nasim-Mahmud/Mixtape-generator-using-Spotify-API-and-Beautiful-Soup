@@ -36,7 +36,7 @@ music_list = soup.find_all(name="h3", id="title-of-a-story",
 for names in music_list:
     music_name = names.get_text().replace("\t", "")
     musics.append(music_name.replace("\n", ""))
-print(musics)
+# print(musics)
 
 sp = spotipy.Spotify(
     auth_manager=SpotifyOAuth(
