@@ -1,5 +1,6 @@
 import os
-import spotipy as sp
+import spotify as spotify
+import spotipy
 import requests
 from datetime import date
 from bs4 import BeautifulSoup
@@ -51,5 +52,5 @@ for names in music_list:
 print(musics)
 
 for music in musics:
-    playlist = sp.search(q=f"track:{music} year:{year}", type="track")
+    playlist = spotify.search(q=f"track:{music} year:{year}", type="track")
     print(playlist)
