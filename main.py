@@ -9,7 +9,7 @@ from spotipy.oauth2 import SpotifyOAuth
 # TODO 1: Retrieving spotify credentials from environment variable
 SPOTIFY_CLIENT_ID = os.environ["SPOTIFY_CLIENT_ID"]
 SPOTIFY_CLIENT_SECRET = os.environ["SPOTIFY_CLIENT_SECRET"]
-SPOTIPY_REDIRECT_URI = "https://example.com/callback"
+SPOTIPY_REDIRECT_URI = "https://example.com/"
 
 # TODO 2: Retrieving date from user
 year = int(input("Please enter the year: "))
@@ -63,8 +63,8 @@ for music in musics:
     except IndexError:
         print(f"Sorry! Can't find the following song: {music}")
 
-# TODO 5: Creating playlist and adding songs to the playlist
-playlist = sp.user_playlist_create(user=user_id, name=f"{dt} Billboard Top 100", public=False)
+# # TODO 5: Creating playlist and adding songs to the playlist
+playlit = sp.user_playlist_create(user=user_id, name=f"{dt} Billboard Top 100", public=False)
 print(f'Playlist link: {playlist["owner"]["external_urls"]["spotify"]}')
 sp.playlist_add_items(playlist_id=playlist["id"], items=song_uri)
 print("Success!")
