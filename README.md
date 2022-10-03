@@ -35,3 +35,4 @@ We will be able to verify our authentication using this. The user id must now be
 Now that we have the songs collected from the Billboard website, we can search for them. Keep in mind that each music has a URI that we may use as a parameter when adding it to the Spotify playlist. Additionally, not all songs may be available on Spotify; thus, we must employ exception handling to skip such tracks. We can add those songs to the playlist using the sp object from the Spotify class.
 
 
+Happy Coding! :)
