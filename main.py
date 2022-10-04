@@ -64,7 +64,7 @@ for music in musics:
         print(f"Sorry! Can't find the following song: {music}")
 
 # # TODO 5: Creating playlist and adding songs to the playlist
-playlit = sp.user_playlist_create(user=user_id, name=f"{dt} Billboard Top 100", public=False)
+playlist = sp.user_playlist_create(user=user_id, name=f"{dt} Billboard Top 100", public=False)
 print(f'Playlist link: {playlist["owner"]["external_urls"]["spotify"]}')
 sp.playlist_add_items(playlist_id=playlist["id"], items=song_uri)
 print("Success!")
